@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  database:
+    image: mongo
+    container_name: mongo
+    restart: always
+    ports: 
+      - 27017:27017  
+    environment:
+      # MONGO_INITDB_ROOT_USERNAME: uphold
+      # MONGO_INITDB_ROOT_PASSWORD: uphold
+      MONGO_INITDB_DATABASE: uphold
+    volumes: 
+      - mongodb_data_container:/data/db
+    # network_mode: host
+  app:
+    build: .
+    container_name: app
+    # ports: 
+      # - 3000:3000    
+    volumes: 
+      - .:/usr/app
+    # network_mode: host
+volumes: 
+  mongodb_data_container:
