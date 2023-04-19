@@ -1,8 +1,3 @@
-# Uphold
-
-Use the Uphold API to create a bot that is able to alert you about price oscillations on a given
-currency pair.
-
 ## Features
 
 This bot connect to Uphold public ticker and retrieve the BTC-USD rate every 5
